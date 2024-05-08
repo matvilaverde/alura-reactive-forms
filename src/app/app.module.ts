@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MensagemComponent } from './components/mensagem/mensagem.component';
 import { SucessoCadastroComponent } from './sucesso-cadastro/sucesso-cadastro.component';
+import { MaiorIdadeDirective } from './directives/maior-idade.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SucessoCadastroComponent } from './sucesso-cadastro/sucesso-cadastro.co
     FooterComponent,
     HeaderComponent,
     MensagemComponent,
-    SucessoCadastroComponent
+    SucessoCadastroComponent,
+    MaiorIdadeDirective
   ],
   imports: [AppRoutingModule, BrowserModule, FormsModule],
   providers: [],
