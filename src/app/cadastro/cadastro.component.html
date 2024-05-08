@@ -41,18 +41,22 @@
           type="tel"
           placeholder="(XX) XXXXX-XXXX"
           class="campo__escrita"
+          ngModel
           required
           pattern="(\(?\d{2}\)?\s?)(\d{5}\-?\d{4})"
+          #telefone="ngModel"
         />
 
-        <div *ngIf="(f.controls['telefone']?.invalid && f.controls['telefone']?.touched)
-          || f.controls['telefone']?.dirty">
-          <span class="erro__texto" *ngIf="f.controls['telefone']?.errors?.['required']">
-            O campo de contato deve ser preenchido.
-          </span>
-          <span class="erro__texto" *ngIf="f.controls['telefone']?.errors?.['pattern']">
-            O campo de contato é inválido.
-          </span>
+        <div *ngIf="(telefone?.invalid && telefone?.touched)
+          || telefone?.dirty">
+          <app-mensagem
+            *ngIf="telefone?.errors?.['required']"
+            mensagem="O campo de contato deve ser preenchido."
+          ></app-mensagem>
+          <app-mensagem
+            *ngIf="telefone?.errors?.['pattern']"
+            mensagem="O campo de contato é inválido."
+          ></app-mensagem>
         </div>
       </div>
     </div>
@@ -66,21 +70,24 @@
         ngModel
         required
         pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$"
+        #email="ngModel"
       />
       <!-- email -->
 
-      <div *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched)
-        || f.controls['email']?.dirty">
-        <span class="erro__texto" *ngIf="f.controls['email']?.errors?.['required']">
-          O campo de e-mail deve ser preenchido.
-        </span>
+      <div *ngIf="(email?.invalid && email?.touched)
+        || email?.dirty">
+        <app-mensagem
+          *ngIf="email?.errors?.['required']"
+          mensagem="O campo de e-mail deve ser preenchido."
+        ></app-mensagem>
+        <app-mensagem
+          *ngIf="email?.errors?.['pattern']"
+          mensagem="Insira um e-mail válido."
+        ></app-mensagem>
         <!-- Validação para a diretiva email
           <span class="erro__texto" *ngIf="f.controls['email']?.errors?.['email']">
           Insira um e-mail válido.
         </span> -->
-        <span class="erro__texto" *ngIf="f.controls['email']?.errors?.['pattern']">
-          Insira um e-mail válido.
-        </span>
       </div>
     </div>
 
