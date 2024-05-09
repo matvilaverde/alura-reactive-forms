@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MensagemComponent } from './components/mensagem/mensagem.component';
 import { SucessoCadastroComponent } from './sucesso-cadastro/sucesso-cadastro.component';
 import { MaiorIdadeDirective } from './directives/maior-idade.directive';
+import { ValidandoCepDirective } from './directives/validando-cep.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MaiorIdadeDirective } from './directives/maior-idade.directive';
     HeaderComponent,
     MensagemComponent,
     SucessoCadastroComponent,
-    MaiorIdadeDirective
+    MaiorIdadeDirective,
+    ValidandoCepDirective
   ],
   imports: [AppRoutingModule, BrowserModule, FormsModule, HttpClientModule],
   providers: [],
