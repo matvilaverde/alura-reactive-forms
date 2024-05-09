@@ -128,7 +128,7 @@
         pattern="^(\d{5})(-?\d{3})$"
         minlength="8"
         maxlength="9"
-        (blur)="consultaCEP($event)"
+        (blur)="consultaCEP($event, f)"
       />
 
       <div *ngIf="(cep?.invalid && cep?.touched) || cep?.dirty">
@@ -163,6 +163,7 @@
         ></app-mensagem>
       </div>
     </div>
+
     <div class="formulario__dupla">
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="numero">Numero</label>
@@ -187,6 +188,7 @@
           ></app-mensagem>
         </div>
       </div>
+
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="complemento">Complemento</label>
         <input
@@ -198,6 +200,7 @@
         />
       </div>
     </div>
+
     <div class="formulario__campo">
       <label class="campo__etiqueta" for="bairro">Bairro</label>
       <input
@@ -216,7 +219,7 @@
         ></app-mensagem>
       </div>
     </div>
-    </div>
+
     <div class="formulario__dupla">
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="cidade">Cidade</label>
@@ -235,7 +238,6 @@
             mensagem="O campo cidade é obrigatório."
           ></app-mensagem>
         </div>
-      </div>
       </div>
 
       <div class="formulario__campo">
@@ -271,8 +273,8 @@
           <option value="EX">Estrangeiro</option>
         </select>
       </div>
-
     </div>
+
     <button type="submit" class="formulario__botao">Enviar formulário</button>
     </form>
 </main>
