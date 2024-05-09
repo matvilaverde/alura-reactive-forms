@@ -179,7 +179,7 @@
           ngModel
           required
           #numero="ngModel"
-          pattern="[0-9]"
+          pattern="[0-9]*"
         />
 
         <div *ngIf="(numero?.invalid && numero?.touched) || numero.dirty">
